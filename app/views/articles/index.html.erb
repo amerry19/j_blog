@@ -1,6 +1,8 @@
-<h1>Listing articles</h1>
+<h1 id="article-header">Listing articles</h1>
 
-<%= link_to 'Create new post', new_article_path %>
+<div class="create-wrapper">
+	<%= link_to 'Create new post', new_article_path, class: 'btn btn-primary' %>
+</div>
 <div class="media">
 	<div class="media-body">
 		<table class="table table-hover">
@@ -12,9 +14,9 @@
 			<% @articles.each do |article| %>
 			<tr>
 				<td><%= article.title %></td>
-				<td><%= article.text %></td>
+				<td><%= article.text[0...50] %></td>
 				<td><%= link_to 'Show', article_path(article), class: 'btn btn-mini btn-success' %></td>
-				<td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-mini'%></td>
+				<td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-mini btn-info'%></td>
 				<td><%= link_to 'Destroy', article_path(article), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?'} %></td>
 		
 			</tr>
@@ -23,4 +25,4 @@
 	</div>
 </div>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', root_path, class: 'btn btn-link' %>

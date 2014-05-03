@@ -1,1 +1,73 @@
 @import 'bootstrap';
+.splash-title {
+	font-family: "The Girl Next Door", cursive;
+	text-align: center;
+	-webkit-animation: fadein 3s; /* Safari and Chrome */
+       -moz-animation: fadein 3s; /* Firefox */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera */
+            animation: fadein 3s;
+}
+
+#article-header {
+	font-family: "The Girl Next Door", cursive;
+	text-align: center;
+	-webkit-animation: fadein 3s; /* Safari and Chrome */
+       -moz-animation: fadein 3s; /* Firefox */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera */
+            animation: fadein 3s;
+}
+
+.styled-title {
+	font-family: "The Girl Next Door", cursive;
+	text-align: center;
+}
+
+.create-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.splash-pic {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.nav-tabs > li, .nav-pills > li {
+	float: none;
+	display: inline-block;
+}
+
+.nav-tabs {
+	text-align: center;
+	background: white;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+/*wierd hack to work around rails complaining about no "{" after the @fades */
+{}
