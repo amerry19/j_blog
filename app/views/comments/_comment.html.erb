@@ -1,17 +1,17 @@
 <% if !comment.errors.any? %>
+<% @created = comment.created_at.getlocal %>
 	<div class="comment-shade">
 		<p class="styled-title">
 			<strong>Written by:</strong>
 			<%= comment.commenter%>
+			<%= @created.strftime("at %I:%M %P on %m-%d-%Y") %>
 		</p>
 		<p class="styled-title">
 			<strong>Comment:</strong>
 			<%= comment.body %>
 		</p>
-
-
-	<p class="styled-title">
-		<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?'} %>	
-	</p>
+		<p class="styled-title">
+			<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?'} %>	
+		</p>
 	</div>
 <% end %>

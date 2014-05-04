@@ -6,24 +6,24 @@
 <div class="media">
 	<div class="media-body">
 		<table class="table table-hover">
-			<tr>
-				<th class="styled-title">Post Date</th>
-				<th class="styled-title"><strong>Title</strong></th>
-				<th class="styled-title"><strong>Text</strong></th>
+			<tr class="styled-title-bold">
+				<th>Post Date</th>
+				<th>Title</th>
+				<th>Text</th>
 			</tr>
 	
-			<% @articles.each do |article| %>
-			<tr>
-				<td><%= article.title %></td>
-				<td><%= article.text[0...50] %></td>
-				<td><%= link_to 'Show', article_path(article), class: 'btn btn-mini btn-success' %></td>
-				<td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-mini btn-info'%></td>
-				<td><%= link_to 'Destroy', article_path(article), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?'} %></td>
-			</tr>
+			<% @articles.reverse.each do |article| %>
+				<% @created = article.created_at.getlocal %>
+				<tr class="styled-title">
+					<td><%= @created.strftime("%m-%d-%Y at %I:%M %P") %></td>
+					<td><%= article.title %></td>
+					<td><%= article.text[0...50] %></td>
+					<td><%= link_to 'Show', article_path(article), class: 'btn btn-mini btn-success' %></td>
+					<td><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-mini btn-info' %></td>
+					<td><%= link_to 'Destroy', article_path(article), method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?'} %></td>
+				</tr>
 			<% end %>
 
 		</table>
 	</div>
 </div>
-
-<!--<%= link_to 'Back', root_path, class: 'btn btn-link' %>-->

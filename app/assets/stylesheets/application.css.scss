@@ -24,6 +24,14 @@
 	text-align: center;
 }
 
+
+.styled-title-bold {
+	font-family: "The Girl Next Door", cursive;
+	/* NON-NORMAL WEIGHTS NOT SUPPORTED FOR CURRENT FONT TYPE*/
+	font-weight: bold;
+}
+
+
 .styled-error {
 	font-family: "The Girl Next Door", cursive;
 	text-align: center;
@@ -60,6 +68,19 @@
 	margin-left: auto;
 	width: 50%;
 }
+/*
+.recent-comm {
+	background-color: #F7EFF6;
+	border-radius: 5%;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	-webkit-animation: fadein 3s; 
+       -moz-animation: fadein 3s; 
+        -ms-animation: fadein 3s; 
+         -o-animation: fadein 3s; 
+            animation: fadein 3s;
+}*/
 
 ul{
 	list-style-type: none;
