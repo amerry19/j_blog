@@ -1,13 +1,29 @@
-<%= form_for ([@article, @article.comments.build]) do |f| %>
+<%= form_for ([@article, Comment.new]) do |f| %>
+	<div>
+    <% if @comment && @comment.errors.any? %>
+      <div class="styled-error">
+        <div id="error_explanation">
+      	  <p><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from posting: </p>
+      	  <ul>
+      	    <% @comment.errors.full_messages.each do |msg| %>
+      	      <li><%= msg %></li>
+      	    <% end %>
+            </ul>
+        </div>
+    <% end %>
+  </div>
+  
+  <div class="styled-title">
 	<p>
-		<%= f.label :commenter %><br>
+		<%= f.label :commenter %>
 		<%= f.text_field :commenter %>
 	</p>
 	<p>
-		<%= f.label :body %><br>
+		<%= f.label :body %>
 		<%= f.text_field :body %>
 	</p>
 	<p>
-		<%= f.submit %>
+		<%= f.submit 'Comment!', :class => 'btn btn-success' %>
 	</p>
+  </div>
 <% end %>

@@ -1,12 +1,17 @@
-<p>
-	<strong>Written by:</strong>
-	<%= comment.commenter%>
-</p>
-<p>
-	<strong>Comment:</strong>
-	<%= comment.body %>
-</p>
+<% if !comment.errors.any? %>
+	<div class="comment-shade">
+		<p class="styled-title">
+			<strong>Written by:</strong>
+			<%= comment.commenter%>
+		</p>
+		<p class="styled-title">
+			<strong>Comment:</strong>
+			<%= comment.body %>
+		</p>
 
-<p>
-	<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?'} %>	
-</p>
+
+	<p class="styled-title">
+		<%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?'} %>	
+	</p>
+	</div>
+<% end %>
