@@ -11,8 +11,11 @@
 	<!--
 	Implement fade in for when someone adds a comment.
 	<p class="recent-comm"><%= @article.comments.last %></p>-->
-	<% @comment_list = @article.comments.reverse %>
-	<%= render @comment_list %>
+	<% @article.comments.reverse.each do |comment| %>
+
+		<%= render comment %>
+
+	<% end %>
 
 <h3 class="styled-title">Leave a comment:</h3>
 	
