@@ -13,7 +13,7 @@
 			</tr>
 	
 			<% @articles.reverse.each do |article| %>
-				<% @created = article.created_at.getlocal %>
+				<% @created = article.created_at %>
 				<tr class="styled-title">
 					<td><%= @created.strftime("%m-%d-%Y at %I:%M %P") %></td>
 					<td><%= article.title %></td>
