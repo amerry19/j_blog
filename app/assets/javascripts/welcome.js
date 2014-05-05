@@ -3,6 +3,12 @@
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
 // Ultra-lite slideshow plugin
+
+// Wrapped with ready function, passed to last line which listens for page load triggered by turblinks
+// Needed so that slideshow would render when home link on nav bar was clicked after page load
+var ready;
+ready = function() {
+
 (function($){
 	function prefix(el){
 		var prefixes = ["Webkit", "Moz", "O", "ms"];
@@ -111,7 +117,12 @@
 
 $(function(){
   $('#Fader').easyFader({
-    slideDur: 6000,
-    fadeDur: 800
+    slideDur: 3500,
+    fadeDur: 1000
   });
 });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
