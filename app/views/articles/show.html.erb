@@ -11,7 +11,7 @@
 	<!--
 	Implement fade in for when someone adds a comment.
 	<p class="recent-comm"><%= @article.comments.last %></p>-->
-	<% @article.comments.reverse.each do |comment| %>
+	<% @article.comments.each do |comment| %>
 
 		<%= render comment %>
 
