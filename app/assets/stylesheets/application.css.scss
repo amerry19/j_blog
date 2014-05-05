@@ -1,4 +1,5 @@
 @import 'bootstrap';
+
 .splash-title {
 	font-family: "The Girl Next Door", cursive;
 	text-align: center;
@@ -7,6 +8,33 @@
         -ms-animation: fadein 3s; /* Internet Explorer */
          -o-animation: fadein 3s; /* Opera */
             animation: fadein 3s;
+}
+
+.fader {
+	background-size: 100%;
+	position: relative;
+	padding-top: 45%;
+	overflow: hidden;
+	border-radius: .5%
+}
+
+.fader .slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 1;
+	opacity: 0;
+}
+
+.fader img.slide {
+	height: auto;	
+}
+
+#splash-pic {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 
 #article-header {
@@ -42,12 +70,6 @@
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-}
-
-.splash-pic {
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
 }
 
 .nav-tabs > li, .nav-pills > li {
