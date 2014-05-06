@@ -20,6 +20,8 @@ ready = function() {
 		return "transition" in el.style ? "" : false;
 	};
 	var methods = {
+		
+
 		init: function(settings){
 			return this.each(function(){
 				var config = {
@@ -30,6 +32,7 @@ ready = function() {
 					$.extend(config, settings);
 				};
 				this.config = config;
+				// Declare private vars, stores data that is not user defined
 				var $container = $(this),
 					slideSelector = '.slide',
 					fading = false,
@@ -40,13 +43,18 @@ ready = function() {
 					totalSlides = $slides.length,
 					$pagerList = $container.find('.pager_list');
 					prefix = prefix($container[0]);
+				// Handles movement of slides within z-index and animation 
 				function animateSlides(activeNdx, newNdx){
+					// Strips element of any previous styling
 					function cleanUp(){
+						// Removes inline styling from element
 						$slides.eq(activeNdx).removeAttr('style');
+						// Switches new slide to active slide
 						activeSlide = newNdx;
 						fading = false;
 						waitForNext();
 					};
+					// Conditional to prohibit user clicking to next slide via button while a transition is occuring
 					if(fading || activeNdx == newNdx){
 						return false;
 					};
@@ -72,6 +80,7 @@ ready = function() {
 						},config.fadeDur);
 					};
 				};
+				// Implements conditional framework to handle 3 slide transition options
 				function changeSlides(target){
 					if(target == 'next'){
 						newSlide = activeSlide + 1;
