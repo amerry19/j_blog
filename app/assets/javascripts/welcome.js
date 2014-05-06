@@ -102,9 +102,10 @@ ready = function() {
 						changeSlides('next');
 					},config.slideDur);
 				};
+				// Deleted i from <li>'i'</li> to remove it from bottom left of slideshow
 				for(var i = 0; i < totalSlides; i++){
 					$pagerList
-						.append('<li class="page" data-target="'+i+'">'+i+'</li>');
+						.append('<li class="page" data-target="'+i+'"></li>');
 				};
 				$container.find('.page').bind('click',function(){
 					var target = $(this).attr('data-target');
